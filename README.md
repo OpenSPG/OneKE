@@ -80,7 +80,7 @@ Conda virtual environments offer a light and flexible setup.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/zjunlp/OneKE.git
+git clone https://github.com/OpenSPG/OneKE.git
 ```
 2. Enter the working directory, and all subsequent commands should be executed in this directory.
 ```bash
@@ -108,7 +108,7 @@ Docker image provides greater reliability and stability.
 **Configure Steps**
 1. Clone the repository:
 ```bash
-git clone https://github.com/zjunlp/OneKE.git
+git clone https://github.com/OpenSPG/OneKE.git
 ```
 2. Pull the docker image from the mirror repository.
 ```bash
@@ -209,7 +209,7 @@ python src/models/vllm_serve.py --config $config_file # deploy local model via v
 python src/run.py --config $config_file # start extraction, executed in the OneKE directory
 ```
 
-Refer to [here](https://github.com/zjunlp/OneKE/tree/main/examples/results) to get an overview of the knowledge extraction results.
+Refer to [here](https://github.com/OpenSPG/OneKE/tree/main/examples/results) to get an overview of the knowledge extraction results.
 
 #### 🖊️Start with Python
 You can also try OneKE by directly running the `example.py` file located in the `example` directory. Specifically, execute the following commands:
@@ -244,11 +244,11 @@ print("Trajectory:", json.dumps(trajectory, indent=4))
 ```
 First, select an appropriate extraction model, then complete the configuration of extraction parameters (such as extraction task, extraction text, etc.). Finally, call the `get_extract_result` function of the `Pipeline` class to perform information extraction and obtain the final results.
 
-Refer to [here](https://github.com/zjunlp/OneKE/tree/main/examples/results/NER.json) to get an overview of the knowledge extraction results.
+Refer to [here](https://github.com/OpenSPG/OneKE/tree/main/examples/results/NER.json) to get an overview of the knowledge extraction results.
 
 #### 🖊️Start with Web UI
 
-> Note: Before starting with the web UI, make sure the package `gradio 4.44.0` is already installed in your [Environment](https://github.com/zjunlp/OneKE/tree/main/requirements.txt).
+> Note: Before starting with the web UI, make sure the package `gradio 4.44.0` is already installed in your [Environment](https://github.com/OpenSPG/OneKE/tree/main/requirements.txt).
 
 **Step1: Execute Command**
 
@@ -318,7 +318,7 @@ The final extraction result should be:
 | --- | --- |
 | Finally, every other year, ELRA organizes a major conference LREC, the International Language Resources and Evaluation Conference. | ELRA, LREC, International Language Resources and Evaluation Conference |
 
-Click [here](https://github.com/zjunlp/OneKE/tree/main/examples/results/NER.json) to obtain the raw results in `json` format.
+Click [here](https://github.com/OpenSPG/OneKE/tree/main/examples/results/NER.json) to obtain the raw results in `json` format.
 > Note: The actual extraction results may not exactly match this due to LLM randomness.
 
 The result indicates that, given the text and entity type constraint, entities of type `conference` have been extracted: `ELRA`, `conference`, `International Language Resources and Evaluation Conference`.
@@ -352,7 +352,7 @@ The final extraction result should be:
 | --- | --- | --- | --- |
 | The aid group Doctors Without Borders said that since Saturday , more than 275 wounded people had been admitted and treated at Donka Hospital in the capital of Guinea , Conakry . | Guinea | Conakry | Country-Capital |
 
-Click [here](https://github.com/zjunlp/OneKE/tree/main/examples/results/RE.json) to obtain the raw results in `json` format.
+Click [here](https://github.com/OpenSPG/OneKE/tree/main/examples/results/RE.json) to obtain the raw results in `json` format.
 > Note: The actual extraction results may not exactly match this due to LLM randomness.
 
 The result indicates that, the relation `Country-Capital` is extracted from the given text based on the relation list, accompanied by the corresponding head entity `Guinea` and tail entity `Conakry`, which denotes that `Conakry is the capital of Guinea`.
@@ -422,7 +422,7 @@ The final extraction result should be:
   </tr>
 </table>
 
-Click [here](https://github.com/zjunlp/OneKE/tree/main/examples/results/EE.json) to obtain the raw results in `json` format.
+Click [here](https://github.com/OpenSPG/OneKE/tree/main/examples/results/EE.json) to obtain the raw results in `json` format.
 > Note: The actual extraction results may not exactly match this due to LLM randomness.
 
 The extraction results show that the `data breach` event is identified using the trigger `compromised`, and the specific contents of different event arguments such as `compromised data` and `victim` have also been extracted.
@@ -493,13 +493,13 @@ Next, follow the steps below to complete the Triple extraction task:
 
     ( Refer to [issues](#network-issue-solutions) for any network issues. )
 
-Here is an [example](https://github.com/zjunlp/OneKE/tree/main/examples/config/Triple2KG.yaml) to start. And access a raw [results](https://github.com/zjunlp/OneKE/tree/main/examples/results/TripleExtraction.json) in JSON format here.
+Here is an [example](https://github.com/OpenSPG/OneKE/tree/main/examples/config/Triple2KG.yaml) to start. And access a raw [results](https://github.com/OpenSPG/OneKE/tree/main/examples/results/TripleExtraction.json) in JSON format here.
 
 > ⚠️ Warning: If you do not intend to build a Knowledge Graph, make sure to remove or comment out the construct field in the yaml file. This will help avoid errors related to database connection issues.
 
 ##### Knowledge Graph
 
- ✨ If you need to construct your Knowledge Graph (KG) **with your Triple Extraction result**, you can refer to this [example](https://github.com/zjunlp/OneKE/tree/main/examples/config/Triple2KG.yaml) for guidance. Mimic this example and add the `construct` field. Just update the field with your own database parameters.
+ ✨ If you need to construct your Knowledge Graph (KG) **with your Triple Extraction result**, you can refer to this [example](https://github.com/OpenSPG/OneKE/tree/main/examples/config/Triple2KG.yaml) for guidance. Mimic this example and add the `construct` field. Just update the field with your own database parameters.
 
 ```yaml
 construct: # (Optional) If you want to construct a Knowledge Graph, you need to set the construct field, or you must delete this field.
@@ -548,7 +548,7 @@ Here is an excerpt of the extracted content:
 | **Quotes**                       | "The U.S. intelligence community has identified her as having troubling relationships with America’s foes."; "If Gabbard is confirmed, America’s allies may not share as much information with the U.S."  |
 | **Viewpoints**                   | Gabbard's nomination is considered alarming and dangerous for U.S. national security; Her anti-war stance and criticism of military interventions draw both support and criticism. |
 
-Click [here](https://github.com/zjunlp/OneKE/tree/main/examples/results/NewsExtraction.json) to obtain the raw results in `json` format.
+Click [here](https://github.com/OpenSPG/OneKE/tree/main/examples/results/NewsExtraction.json) to obtain the raw results in `json` format.
 > Note: The actual extraction results may not exactly match this due to LLM randomness.
 
 In contrast to eariler tasks, the `Base-Type` Task requires you to provide an explicit `Instruction` that clearly defines your extraction task, while not allowing the setting of `constraint` values.
